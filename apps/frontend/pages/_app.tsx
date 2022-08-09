@@ -1,17 +1,14 @@
 import { FC, useEffect, useState } from 'react';
 
+import SEO from '@config/next-seo';
+import { DefaultSeo } from 'next-seo';
 import { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
-import SEO from '@config/next-seo';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from 'ui/styles';
 import theme from 'ui/styles/theme';
-import { DefaultSeo } from 'next-seo';
 
-const MyApp: FC<AppProps> = ({
-  Component,
-  pageProps: { session, ...pageProps },
-}) => {
+const MyApp: FC<AppProps> = ({ Component, pageProps: { ...pageProps } }) => {
   const [mounted, setMounted] = useState(false);
   const { asPath } = useRouter();
 
