@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+
 import { Card } from '@ui';
 
 const Home: NextPage = () => {
