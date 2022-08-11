@@ -65,7 +65,7 @@ const WorkoutForm = ({ children, ...rest }: WorkoutFormProps) => {
             />
           </label>
           <button type="submit">Add Workout</button>
-          {error && <p>{error}</p>}
+          {error && <S.Error>{error}</S.Error>}
         </form>
         {children}
       </S.WorkoutForm>
