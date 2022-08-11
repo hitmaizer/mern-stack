@@ -14,11 +14,11 @@ const Workouts = ({
       <S.Workouts {...rest}>
         <S.Title>{title}</S.Title>
         <h3>
-          <strong>Load(kg):</strong>
+          <strong>Load(kg): </strong>
           {load}
         </h3>
         <h3>
-          <strong>Reps:</strong>
+          <strong>Reps: </strong>
           {reps}
         </h3>
         <p>{created}</p>
