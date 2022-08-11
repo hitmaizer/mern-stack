@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import type { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 
-import { Navbar, Stack, Workouts } from '@ui';
+import { Grid, Navbar, Workouts } from '@ui';
 
 export interface Workout {
   title: string;
@@ -21,7 +21,9 @@ const Home: NextPage = ({ allWorkouts }: any) => {
   useEffect(() => {
     setWorkouts(allWorkouts);
   }, []);
+
   console.log(workouts);
+
   return (
     <div>
       <Navbar>
@@ -31,7 +33,7 @@ const Home: NextPage = ({ allWorkouts }: any) => {
       </Navbar>
       {workouts && (
         <>
-          <Stack display="flex">
+          <Grid>
             {workouts.map((workout: Workout) => {
               return (
                 <Workouts
@@ -43,7 +45,7 @@ const Home: NextPage = ({ allWorkouts }: any) => {
                 />
               );
             })}
-          </Stack>
+          </Grid>
         </>
       )}
     </div>
