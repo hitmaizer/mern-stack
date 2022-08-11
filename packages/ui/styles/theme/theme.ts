@@ -12,7 +12,8 @@ const theme = {
     gray700: '#404040',
     gray800: '#262626',
     gray900: '#171717',
-    primary: '#E50914',
+    primary: '#1aac83',
+    error: '#e7195a',
   },
 
   fonts: {
