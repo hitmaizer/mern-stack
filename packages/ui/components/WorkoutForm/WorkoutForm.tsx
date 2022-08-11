@@ -18,10 +18,9 @@ const WorkoutForm = ({ children, ...rest }: WorkoutFormProps) => {
       method: 'POST',
       body: JSON.stringify(workout),
       headers: {
-        'Content-Type:': 'application/json',
+        'Content-Type': 'application/json',
       },
     });
-
     const json = await res.json();
 
     if (!res.ok) {
@@ -32,7 +31,7 @@ const WorkoutForm = ({ children, ...rest }: WorkoutFormProps) => {
       setLoad('');
       setReps('');
       setError(null);
-      console.log('new workout created');
+      // console.log('new workout created', json);
     }
   };
 
@@ -66,8 +65,8 @@ const WorkoutForm = ({ children, ...rest }: WorkoutFormProps) => {
             />
           </label>
           <button type="submit">Add Workout</button>
+          {error && <p>{error}</p>}
         </form>
-        {error && <p>{error}</p>}
         {children}
       </S.WorkoutForm>
     </>
