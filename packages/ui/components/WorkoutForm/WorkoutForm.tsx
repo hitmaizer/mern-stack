@@ -39,7 +39,7 @@ const WorkoutForm = ({ children, ...rest }: WorkoutFormProps) => {
     <>
       <S.WorkoutForm {...rest}>
         <form action="" onSubmit={handleSubmit}>
-          <h3>Add a new Workout</h3>
+          <S.Title>Add a new Workout</S.Title>
           <label htmlFor="title">
             Excercise Title:
             <input
