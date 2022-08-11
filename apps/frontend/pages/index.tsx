@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import type { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 
-import { Grid, Navbar, Workouts } from '@ui';
+import { Grid, Logo, Navbar, WorkoutForm, Workouts } from '@ui';
 
 export interface Workout {
   title: string;
@@ -28,7 +28,7 @@ const Home: NextPage = ({ allWorkouts }: any) => {
     <div>
       <Navbar>
         <Link href="/">
-          <h1>Workout Buddy</h1>
+          <Logo>Workout Buddy</Logo>
         </Link>
       </Navbar>
       {workouts && (
@@ -45,6 +45,7 @@ const Home: NextPage = ({ allWorkouts }: any) => {
                 />
               );
             })}
+            <WorkoutForm />
           </Grid>
         </>
       )}
