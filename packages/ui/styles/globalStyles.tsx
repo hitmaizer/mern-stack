@@ -3,6 +3,8 @@ import reset from 'styled-reset';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
   
   html {
     height: 100%;
@@ -53,6 +55,9 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     overflow-x: hidden;
+    background: #f1f1f1;
+    margin: 0;
+    font-family: "Poppins";
   }
   
 `;
