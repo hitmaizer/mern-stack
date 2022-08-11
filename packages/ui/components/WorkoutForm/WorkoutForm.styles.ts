@@ -31,3 +31,9 @@ export const WorkoutForm = styled.div`
     padding: 16px 32px;
   }
 `;
+
+export const Title = styled.h1`
+  font-size: 24px;
+  font-weight: bold;
+  color: ${({ theme }) => theme.colors.primary};
+`;
