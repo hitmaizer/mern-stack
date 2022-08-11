@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Workouts = styled.div`
-  background: #fff;
+  background: ${({ theme }) => theme.colors.white};
   border-radius: 4px;
   margin: 20px auto;
   padding: 20px;
