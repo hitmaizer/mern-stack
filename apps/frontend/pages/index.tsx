@@ -1,13 +1,16 @@
 import type { NextPage } from 'next';
+import Link from 'next/link';
 
-import { Card } from '@ui';
+import { Navbar } from '@ui';
 
 const Home: NextPage = () => {
   return (
     <div>
-      <Card>Cenas</Card>
-      <h1>Hello mate!</h1>
-      <p>Hello mate!</p>
+      <Navbar>
+        <Link href="/">
+          <h1>Workout Buddy</h1>
+        </Link>
+      </Navbar>
     </div>
   );
 };
