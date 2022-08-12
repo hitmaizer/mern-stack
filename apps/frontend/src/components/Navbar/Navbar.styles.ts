@@ -18,3 +18,19 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
+
+export const LogoutBtn = styled.button`
+  background: #fff;
+  color: ${({ theme }) => theme.colors.error};
+  border: 2px solid ${({ theme }) => theme.colors.error};
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: 'Poppins';
+  cursor: pointer;
+  font-size: 1em;
+  transition: all 300ms ease;
+  &:hover {
+    background: ${({ theme }) => theme.colors.error};
+    color: ${({ theme }) => theme.colors.white};
+  }
+`;
