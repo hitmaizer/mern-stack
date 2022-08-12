@@ -4,6 +4,7 @@ import SEO from '@config/next-seo';
 import { DefaultSeo } from 'next-seo';
 import { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
+import { AuthContextProvider } from 'src/context/AuthContext';
 import { WorkoutsContextProvider } from 'src/context/WorkoutContext';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from 'ui/styles';
@@ -35,9 +36,11 @@ const MyApp: FC<AppProps> = ({ Component, pageProps: { ...pageProps } }) => {
         />
 
         <GlobalStyle />
-        <WorkoutsContextProvider>
-          {mounted && <Component {...pageProps} />}
-        </WorkoutsContextProvider>
+        <AuthContextProvider>
+          <WorkoutsContextProvider>
+            {mounted && <Component {...pageProps} />}
+          </WorkoutsContextProvider>
+        </AuthContextProvider>
       </ThemeProvider>
     </>
   );
