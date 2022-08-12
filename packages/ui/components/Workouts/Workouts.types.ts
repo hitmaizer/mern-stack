@@ -15,5 +15,5 @@ export interface WorkoutsProps {
   reps?: number;
   created?: string;
   handleClick: (a: Workout) => void;
-  data?: Workout;
+  data: Workout;
 }
