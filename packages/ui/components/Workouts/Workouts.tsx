@@ -1,5 +1,8 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
+
+import { formatDistanceToNow } from 'date-fns';
+
 import * as S from './Workouts.styles';
 import { WorkoutsProps } from './Workouts.types';
 
@@ -16,7 +19,9 @@ const Workouts = ({ children, data, handleClick, ...rest }: WorkoutsProps) => {
           <strong>Reps: </strong>
           {data?.reps}
         </h3>
-        <p>{data?.createdAt}</p>
+        <p>
+          {formatDistanceToNow(new Date(data.createdAt), { addSuffix: true })}
+        </p>
         <span onClick={() => handleClick(data!)}>delete</span>
         {children}
       </S.Workouts>
