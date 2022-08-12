@@ -2,11 +2,10 @@
 import { useEffect } from 'react';
 
 import type { GetStaticProps, NextPage } from 'next';
-import Link from 'next/link';
 import { useWorkoutsContext } from 'src/hooks/useWorkoutsContext';
 
-import { WorkoutForm } from '@components';
-import { Grid, Logo, Navbar, Stack, Workouts } from '@ui';
+import { Navbar, WorkoutForm } from '@components';
+import { Grid, Stack, Workouts } from '@ui';
 
 export interface Workout {
   title: string;
@@ -40,11 +39,7 @@ const Home: NextPage = ({ allWorkouts }: any) => {
 
   return (
     <div>
-      <Navbar>
-        <Link href="/">
-          <Logo>Workout Buddy</Logo>
-        </Link>
-      </Navbar>
+      <Navbar />
       {workouts && (
         <>
           <Grid>
