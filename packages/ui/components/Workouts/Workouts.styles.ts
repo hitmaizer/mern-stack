@@ -23,10 +23,17 @@ export const Workouts = styled.div`
     top: 20px;
     right: 20px;
     cursor: pointer;
-    background: #f1f1f1;
-    padding: 6px;
-    border-radius: 50%;
-    color: #333;
+    padding: 10px;
+    background: #ffefef;
+    border: 1px solid ${({ theme }) => theme.colors.error};
+    color: ${({ theme }) => theme.colors.error};
+    border-radius: 4px;
+    margin: 20px 0;
+    transition: all 300ms ease;
+    &:hover {
+      background: ${({ theme }) => theme.colors.error};
+      color: ${({ theme }) => theme.colors.white};
+    }
   }
 `;
 
