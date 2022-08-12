@@ -47,6 +47,9 @@ export const WorkoutForm = styled.div`
     border-radius: 4px;
     box-sizing: border-box;
   }
+  .error {
+    border: 1px solid ${({ theme }) => theme.colors.error};
+  }
 `;
 
 export const Title = styled.h1`
@@ -62,4 +65,6 @@ export const Error = styled.p`
   color: ${({ theme }) => theme.colors.error};
   border-radius: 4px;
   margin: 20px 0;
+  width: 100%;
+  text-align: center;
 `;
