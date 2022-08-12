@@ -1,27 +1,23 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import * as S from './Workouts.styles';
 import { WorkoutsProps } from './Workouts.types';
 
-const Workouts = ({
-  children,
-  title,
-  load,
-  reps,
-  created,
-  ...rest
-}: WorkoutsProps) => {
+const Workouts = ({ children, data, handleClick, ...rest }: WorkoutsProps) => {
   return (
     <>
       <S.Workouts {...rest}>
-        <S.Title>{title}</S.Title>
+        <S.Title>{data?.title}</S.Title>
         <h3>
           <strong>Load(kg): </strong>
-          {load}
+          {data?.load}
         </h3>
         <h3>
           <strong>Reps: </strong>
-          {reps}
+          {data?.reps}
         </h3>
-        <p>{created}</p>
+        <p>{data?.createdAt}</p>
+        <span onClick={() => handleClick(data!)}>delete</span>
         {children}
       </S.Workouts>
     </>
