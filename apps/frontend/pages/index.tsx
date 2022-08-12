@@ -1,10 +1,12 @@
 /* eslint-disable no-underscore-dangle */
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import type { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
+import { useWorkoutsContext } from 'src/hooks/useWorkoutsContext';
 
-import { Grid, Logo, Navbar, Stack, WorkoutForm, Workouts } from '@ui';
+import { WorkoutForm } from '@components';
+import { Grid, Logo, Navbar, Stack, Workouts } from '@ui';
 
 export interface Workout {
   title: string;
@@ -16,10 +18,10 @@ export interface Workout {
 }
 
 const Home: NextPage = ({ allWorkouts }: any) => {
-  const [workouts, setWorkouts] = useState([]);
+  const { workouts, dispatch }: any = useWorkoutsContext();
 
   useEffect(() => {
-    setWorkouts(allWorkouts);
+    dispatch({ type: 'SET_WORKOUTS', payload: allWorkouts });
   }, []);
 
   return (
