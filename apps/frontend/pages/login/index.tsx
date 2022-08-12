@@ -1,16 +1,9 @@
-import Link from 'next/link';
-
-import { LoginForm } from '@components';
-import { Logo, Navbar } from '@ui';
+import { LoginForm, Navbar } from '@components';
 
 const index = () => {
   return (
     <>
-      <Navbar>
-        <Link href="/">
-          <Logo>Workout Buddy</Logo>
-        </Link>
-      </Navbar>
+      <Navbar />
       <LoginForm />
     </>
   );
