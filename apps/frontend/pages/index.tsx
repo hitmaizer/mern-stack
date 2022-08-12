@@ -24,6 +24,20 @@ const Home: NextPage = ({ allWorkouts }: any) => {
     dispatch({ type: 'SET_WORKOUTS', payload: allWorkouts });
   }, []);
 
+  const handleClick = async (workout: Workout) => {
+    const res = await fetch(
+      `http://localhost:4000/api/workouts/${workout._id}`,
+      {
+        method: 'DELETE',
+      }
+    );
+    const json = await res.json();
+
+    if (res.ok) {
+      dispatch({ type: 'DELETE_WORKOUT', payload: json });
+    }
+  };
+
   return (
     <div>
       <Navbar>
@@ -39,10 +53,8 @@ const Home: NextPage = ({ allWorkouts }: any) => {
                 return (
                   <Workouts
                     key={workout._id}
-                    title={workout.title}
-                    load={workout.load}
-                    reps={workout.reps}
-                    created={workout.createdAt}
+                    data={workout}
+                    handleClick={handleClick}
                   />
                 );
               })}
