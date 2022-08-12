@@ -11,6 +11,7 @@ const WorkoutForm = ({ children, ...rest }: WorkoutFormProps) => {
   const [load, setLoad] = useState<string | number>(0);
   const [reps, setReps] = useState<string | number>(0);
   const [error, setError] = useState<string | null>('');
+  const [emptyFields, setEmptyFields] = useState<string[]>([]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -28,12 +29,14 @@ const WorkoutForm = ({ children, ...rest }: WorkoutFormProps) => {
 
     if (!res.ok) {
       setError(json.error);
+      setEmptyFields(json.emptyFields);
     }
     if (res.ok) {
       setTitle('');
       setLoad('');
       setReps('');
       setError(null);
+      setEmptyFields([]);
       dispatch({ type: 'CREATE_WORKOUT', payload: json });
     }
   };
@@ -49,6 +52,7 @@ const WorkoutForm = ({ children, ...rest }: WorkoutFormProps) => {
               type="text"
               onChange={(e) => setTitle(e.target.value)}
               value={title}
+              className={emptyFields.includes('title') ? 'error' : ''}
             />
           </label>
           <label htmlFor="load">
@@ -57,6 +61,7 @@ const WorkoutForm = ({ children, ...rest }: WorkoutFormProps) => {
               type="number"
               onChange={(e) => setLoad(e.target.value)}
               value={load}
+              className={emptyFields.includes('load') ? 'error' : ''}
             />
           </label>
           <label htmlFor="reps">
@@ -65,6 +70,7 @@ const WorkoutForm = ({ children, ...rest }: WorkoutFormProps) => {
               type="number"
               onChange={(e) => setReps(e.target.value)}
               value={reps}
+              className={emptyFields.includes('reps') ? 'error' : ''}
             />
           </label>
           <button type="submit">Add Workout</button>
