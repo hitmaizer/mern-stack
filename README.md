@@ -1,6 +1,6 @@
-# Turborepo starter
+# Workout Buddy
 
-This is an official Yarn v1 starter turborepo.
+A MERN Stack course project.
 
 ## What's inside?
 
