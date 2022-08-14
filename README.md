@@ -1,4 +1,4 @@
-# Workout Buddy
+# Workout Buddy!
 
 A MERN Stack course project.
 
