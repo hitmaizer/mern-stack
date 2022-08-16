@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import Router from 'next/router';
 import { useSignup } from 'src/hooks/useSignup';
 
 import * as S from './SignupForm.styles';
@@ -14,6 +15,7 @@ const SignupForm = ({ children, ...rest }: SignupFormProps) => {
     e.preventDefault();
 
     await signup(email, password);
+    Router.push('/');
   };
 
   return (
