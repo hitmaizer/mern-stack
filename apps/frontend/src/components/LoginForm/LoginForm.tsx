@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import Router from 'next/router';
 import { useLogin } from 'src/hooks/useLogin';
 
 import * as S from './LoginForm.styles';
@@ -14,6 +15,7 @@ const LoginForm = ({ children, ...rest }: LoginFormProps) => {
     e.preventDefault();
 
     await login(email, password);
+    Router.push('/');
   };
 
   return (
